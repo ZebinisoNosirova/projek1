@@ -1,0 +1,220 @@
+/* ========================= UMUMIY SOZLAMALAR ========================= */
+html {
+  overflow-y: scroll; /* Scrollbar har doim ko‘rinsin — sahifa qimirlamaydi */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url(gul.avif);
+  background-size: cover;
+  background-attachment: fixed;
+  line-height: 1.6;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fb;
+  color: #333;
+  overflow-x: hidden; /* yon tomonga siljish bo‘lmasin */
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========================= HEADER & NAVBAR ========================= */
+header {
+  background-color: #1e90ff;
+  color: white;
+  padding: 8px 0;
+  position: sticky; /* yuqorida turadi */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start; /* chapga suradi */
+}
+
+.logo {
+  background-color: white;
+  color: #1e90ff;
+  font-weight: 800;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gul {
+  font-size: 28px;
+  opacity: 0.95;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-bottom: 3px solid transparent; /* joy o‘zgarmasligi uchun */
+  border-radius: 5px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  border-bottom: 3px solid #fff; /* joy siljimaydi, faqat rang chiqadi */
+}
+
+/* ========================= MAHSULOTLAR & KATEGORIYALAR ========================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.category-card,
+.product-link {
+  background-color: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.06);
+  text-align: center;
+  font-weight: 500;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover,
+.product-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(16, 24, 40, 0.12);
+}
+
+/* === Rasmlar uchun barqarorlik === */
+.category-card img,
+.lily {
+  width: 100%;
+  max-width: 220px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 8px auto;
+  transition: transform 0.3s ease;
+}
+
+.category-card img:hover {
+  transform: scale(1.07);
+}
+
+/* ========================= BUYURTMA BUTTON ========================= */
+.buyurtma-container {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.buyurtma-btn {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.buyurtma-btn:hover {
+  background-color: #0b6fc2;
+  transform: scale(1.05);
+}
+
+/* ========================= FOOTER ========================= */
+footer {
+  background-color: #1e90ff;
+  color: #dbeafe;
+  padding: 28px 0;
+  text-align: center;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.footer-text {
+  max-width: 520px;
+  color: #d9f1ff;
+  margin: 6px auto;
+}
+
+.copyright {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #030e1e;
+}
+
+/* ========================= RESPONSIVE ========================= */
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .gul {
+    font-size: 24px;
+  }
+
+  .category-card img {
+    height: 160px;
+  }
+}

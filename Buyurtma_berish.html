@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyurtma berish - Flowers</title>
+  <link rel="stylesheet" href="buyurtma_berish.css">
+</head>
+<body>
+  <!-- === HEADER === -->
+  <header>
+    <div class="brand">
+      <div class="logo">F</div>
+      <div>
+        <h2 class="gul">Flowers</h2>
+        <p class="subtitle">Gullar va sovg‘alar</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Bosh sahifa</a></li>
+        <li><a href="mahsulotlar.html">Mahsulotlar</a></li>
+        <li><a href="gul_toifalari.html">Gul toifalari</a></li>
+        <li><a href="buyurtma.html" class="active">Buyurtma berish</a></li>
+        <li><a href="aloqa.html">Aloqa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- === ASOSIY QISM === -->
+  <main>
+    <section class="form-section">
+      <h1>Buyurtma berish</h1>
+      <p class="intro">Quyidagi shaklni to‘ldiring — biz siz bilan tez orada bog‘lanamiz.  
+      Yetkazib berish xizmati — <strong>mutlaqo bepul!</strong></p>
+
+      <div class="form-container">
+        <form id="buyurtmaForm">
+          <label>Ism:</label>
+          <input type="text" id="ism" placeholder="Masalan: Zebiniso" required>
+
+          <label>Familiya:</label>
+          <input type="text" id="familiya" placeholder="Masalan: Nosirova" required>
+
+          <label>Telefon:</label>
+          <input type="tel" id="telefon" placeholder="+998 94 449 04 06" required>
+
+          <label>Gul turi:</label>
+          <select id="gul" required>
+            <option value="">Tanlang...</option>
+            <option value="Atirgul">Atirgul</option>
+            <option value="Liliya">Liliya</option>
+            <option value="Gerbera">Gerbera</option>
+            <option value="Aranjiman">Aranjiman</option>
+          </select>
+
+          <label>Miqdor (dona):</label>
+          <input type="number" id="miqdor" min="1" placeholder="Masalan: 5" required>
+
+          <label>Manzil:</label>
+          <textarea id="manzil" rows="3" placeholder="To‘liq manzilni yozing" required></textarea>
+
+          <label>Qo‘shimcha izoh:</label>
+          <textarea id="izoh" rows="3" placeholder="Masalan: pushti rangda, lenta bilan"></textarea>
+
+          <div class="price-info">
+            <p id="umumiyNarx">Narx: 0 so‘m</p>
+          </div>
+
+          <button type="submit" class="btn-buyurtma">Buyurtma yuborish</button>
+        </form>
+
+        <div class="preview">
+          <img id="gulRasm" src="img/bo‘sh.png" alt="Tanlangan gul">
+        </div>
+      </div>
+
+      <div id="natija" class="natija"></div>
+    </section>
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer>
+    <p> Flowers kompaniyasi — go‘zallik siz bilan!</p>
+    <p>Telefon: +998 94 449 04 06 | © 2025 Flowers</p>
+  </footer>
+
+  <script>
+    const gulSelect = document.getElementById('gul');
+    const miqdorInput = document.getElementById('miqdor');
+    const narxP = document.getElementById('umumiyNarx');
+    const rasm = document.getElementById('gulRasm');
+    const form = document.getElementById('buyurtmaForm');
+    const natija = document.getElementById('natija');
+
+    const gulNarxlari = {
+      "Atirgul": 15000,
+      "Liliya": 20000,
+      "Gerbera": 12000,
+      "Aranjiman": 35000
+    };
+
+    const gulRasmlari = {
+      "Atirgul": "img/atirgul.jpg",
+      "Liliya": "img/liliya.webp",
+      "Gerbera": "img/gerbera.webp",
+      "Aranjiman": "img/aranjiman.webp"
+    };
+
+    gulSelect.addEventListener('change', yangilash);
+    miqdorInput.addEventListener('input', yangilash);
+    function yangilash() {
+      const gul = gulSelect.value;
+      const miqdor = parseInt(miqdorInput.value)  0;
+      const narx = gulNarxlari[gul]  0;
+      const umumiy = narx * miqdor;
+      narxP.textContent = Narx: ${umumiy.toLocaleString()} so‘m;
+      rasm.src = gulRasmlari[gul]  "img/bo‘sh.png";
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      natija.innerHTML = `
+        <div class="card">
+          <h2>Buyurtma qabul qilindi </h2>
+          <p>Rahmat, ${form.ism.value}! Biz siz bilan tez orada bog‘lanamiz.</p>
+          <p><strong>Tanlangan gul:</strong> ${form.gul.value}</p>
+          <p><strong>Miqdor:</strong> ${form.miqdor.value} dona</p>
+          <p><strong>Manzil:</strong> ${form.manzil.value}</p>
+          <p><strong>Izoh:</strong> ${form.izoh.value  "Yo‘q"}</p>
+          <p class="bepul"> Yetkazib berish xizmati — mutlaqo bepul!</p>
+        </div>
+      `;
+      form.reset();
+      yangilash();
+    });
+  </script>
+</body>
+</html>

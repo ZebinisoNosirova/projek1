@@ -1,0 +1,207 @@
+/* === Ranglar va umumiy sozlamalar === */
+:root {
+  --primary: #2563eb;
+  --accent: #60a5fa;
+  --bg: #f4f7ff;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --radius: 12px;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* === Navbar === */
+.site-header {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: white;
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  background: white;
+  color: var(--primary);
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-name {
+  font-weight: 700;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.main-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.main-nav a.active {
+  background: #fff;
+  color: var(--primary);
+}
+
+/* === Aloqa asosiy qismi === */
+.contact-main {
+  padding: 50px 20px;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.intro h1 {
+  font-size: 32px;
+  color: var(--primary);
+}
+
+.intro p {
+  color: var(--muted);
+}
+
+.contact-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* === Fikr yuborish formasi === */
+.contact-form, .contact-info {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.contact-form h2, .contact-info h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+input, textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+.btn {
+  margin-top: 14px;
+  padding: 10px 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent);
+}
+
+/* === Kontakt ma'lumotlari === */
+.contact-info p {
+  margin: 8px 0;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.map-container {
+  margin-top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* === Natija === */
+.success {
+  margin-top: 12px;
+  color: green;
+  font-weight: 600;
+}
+
+/* === Footer === */
+.site-footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* === Responsiv (mobil) === */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}
+Aloqa.css

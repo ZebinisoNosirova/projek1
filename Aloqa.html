@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aloqa - Flowers</title>
+  <link rel="stylesheet" href="Aloqa.css">
+</head>
+<body>
+
+  <!-- === HEADER === -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo">F</div>
+        <div class="brand-text">
+          <div class="brand-name">Flowers</div>
+          <div class="brand-sub">Gullar va sovg‘alar</div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Bosh sahifa</a></li>
+          <li><a href="mahsulotlar.html">Mahsulotlar</a></li>
+          <li><a href="buyurtma.html">Buyurtma berish</a></li>
+          <li><a href="aloqa.html" class="active">Aloqa</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- === ASOSIY QISM === -->
+  <main class="contact-main">
+    <section class="intro">
+      <h1>Biz bilan bog‘laning</h1>
+      <p>Quyidagi shakl orqali bizga murojaat qiling yoki pastdagi ma’lumotlardan foydalaning.</p>
+    </section>
+
+    <div class="contact-grid">
+      <!-- Fikr yuborish formasi -->
+      <div class="contact-form">
+        <h2>Fikr yuborish</h2>
+        <form id="feedbackForm">
+          <label for="ism">Ism:</label>
+          <input type="text" id="ism" placeholder="Masalan: Zebiniso" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" placeholder="Masalan: example@gmail.com" required>
+
+          <label for="xabar">Xabaringiz:</label>
+          <textarea id="xabar" rows="4" placeholder="Xabaringizni shu yerga yozing..." required></textarea>
+
+          <button type="submit" class="btn">Yuborish</button>
+        </form>
+
+        <div id="natija" class="natija"></div>
+      </div>
+
+      <!-- Kontakt ma'lumotlari -->
+      <div class="contact-info">
+        <h2>Aloqa ma’lumotlari</h2>
+        <p><strong>📞 Telefon:</strong> +998 94 449 04 06</p>
+        <p><strong>📍 Manzil:</strong> Toshkent shahri, Yunusobod tumani</p>
+        <p><strong>⏰ Ish vaqti:</strong> Dush–Yakshanba, 9:00 – 21:00</p>
+
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.949053938498!2d69.24007301542293!3d41.29949577927214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b10b7a573d3%3A0x7b4a6a5c0cf828e!2sTashkent!5e0!3m2!1sen!2s!4v1698591000000!5m2!1sen!2s" 
+            width="100%" 
+            height="250" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer class="site-footer">
+    <p>© 2025 Flowers | Go‘zallik siz bilan</p>
+  </footer>
+
+  <script>
+    const form = document.getElementById("feedbackForm");
+    const natija = document.getElementById("natija");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      natija.innerHTML = "<p class='success'>Xabaringiz muvaffaqiyatli yuborildi! 💐</p>";
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
+Aloqa.html

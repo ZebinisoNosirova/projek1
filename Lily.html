@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Lilyalar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff0f5; /* eng yumshoq pushti fon */
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #e60073;
+      margin-top: 30px;
+      font-size: 36px;
+    }
+
+    .flowers {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 50px; /* pastroqqa tushirish */
+    }
+
+    .flower {
+      background: #ffffff;
+      border-radius: 10px;
+      width: 250px;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .flower:hover {
+      transform: translateY(-5px);
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .price {
+      color: #e6005c;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1> Lilyalar </h1>
+
+  <div class="flowers">
+    <div class="flower">
+      <img src="oq lily.webp" alt="Oq Lilya">
+      <p><b>Oq Lilya</b></p>
+      <p class="price">Narxi: 35 000 so'm</p>
+    </div>
+
+    <div class="flower">
+      <img src="pushti lily.webp" alt="Pushti Lilya">
+      <p><b>Pushti Lilya</b></p>
+      <p class="price">Narxi: 37 000 so'm</p>
+    </div>
+
+    <div class="flower">
+      <img src="sariq lily.webp" alt="Sariq Lilya">
+      <p><b>Sariq Lilya</b></p>
+      <p class="price">Narxi: 33 000 so'm</p>
+    </div>
+
+    <div class="flower">
+      <img src="qizil lily.webp" alt="Qizil Lilya">
+      <p><b>Qizil Lilya</b></p>
+      <p class="price">Narxi: 40 000 so'm</p>
+    </div>
+  </div>
+
+</body>
+</html>
